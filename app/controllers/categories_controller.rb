@@ -22,4 +22,18 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(params[:category])
+      flash[:notice] = "Category has been updated."
+      redirect_to @category
+    else
+      flash[:alert] = "Category has not been updated."
+      render :action => "edit"
+    end
+  end
 end
