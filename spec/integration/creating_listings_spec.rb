@@ -1,3 +1,4 @@
+=begin
 require 'spec_helper'
   before do
     project = Factory(:category, :title => "Keyboards")
@@ -20,3 +21,4 @@ require 'spec_helper'
     end
 
   end
+=end
