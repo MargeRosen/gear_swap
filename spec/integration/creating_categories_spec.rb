@@ -10,5 +10,7 @@ feature 'Creating Categories' do
     page.should have_content('Category has been created.')
     category = Category.find_by_name('Keyboards')
     page.current_url.should == category_url(category)
+    title = "Keyboards - Categories - GearSwap"
+    find("title").should have_content(title)
   end
 end
