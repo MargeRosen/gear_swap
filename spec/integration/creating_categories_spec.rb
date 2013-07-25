@@ -13,4 +13,11 @@ feature 'Creating Categories' do
     title = "Keyboards - Categories - GearSwap"
     find("title").should have_content(title)
   end
+
+  scenario "can not create a category without a name" do
+    click_button 'Create Category'
+    page.should have_content("Category has not been created.")
+    page.should have_content("Name can't be blank")
+  end
+
 end
