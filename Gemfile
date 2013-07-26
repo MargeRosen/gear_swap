@@ -1,12 +1,20 @@
-source 'https://rubygems.org'
+ 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'dynamic_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+gem 'sqlite3'
+
+gem 'therubyracer'  # If using Ruby
+gem "twitter-bootstrap-rails"
+gem 'less-rails-bootstrap'
+
 
 gem 'sqlite3'
 

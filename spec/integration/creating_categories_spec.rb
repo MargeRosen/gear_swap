@@ -13,6 +13,8 @@ feature 'Creating Categories' do
     page.current_url.should == category_url(category)
     title = "Keyboards - Categories - GearSwap"
     find("title").should have_content(title)
+    click_link 'Back to Categories Page'
+    page.current_path.should == categories_path
   end
 
   scenario "cannot create a category without a name" do
