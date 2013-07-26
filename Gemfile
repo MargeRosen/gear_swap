@@ -5,20 +5,28 @@ gem 'dynamic_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
 gem 'sqlite3'
-
-
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
+  gem 'launchy'
+  gem 'pry-rails' #REPL - read evaluate print loop
 end
 group :test do
   gem 'capybara', '1.1.2'
   gem 'pry-debugger'
   gem 'factory_girl', '2.6.4'
+  gem 'email_spec', '1.2.1'
+  gem 'simplecov', :require => false, :group => :test
 end
 
-
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +41,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+# User Authentication
+gem 'devise', '3.0.0.rc'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

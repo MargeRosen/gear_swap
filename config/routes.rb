@@ -1,5 +1,7 @@
 GearSwap::Application.routes.draw do
-  resources :categories
+  resources :categories do
+    resources :listings
+  end
   root :to => "categories#index"
 
   # The priority is based upon order of creation:

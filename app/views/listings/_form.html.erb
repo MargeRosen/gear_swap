@@ -1,0 +1,28 @@
+<%= form_for [@category, @listing] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </p>
+   <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+   <p>
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :pics %><br>
+    <%= f.text_area :pics %>
+  </p>
+  <%= f.submit %>
+<% end %>

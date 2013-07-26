@@ -1,0 +1,12 @@
+<div id='listing'>
+  <h2><%= title(@listing.title, "Listings") %></h2>
+   <%= link_to "New Listing", new_category_listing_path(@category) %>
+  <%= link_to "Edit Listing", [:edit, @category, @listing] %>
+  <%= link_to "Delete Listing", [@category, @listing],
+
+      :method => :delete,
+      :confirm => "Are you sure you want to delete this category?" %>
+  <%= simple_format(@listing.description) %>
+  <%= simple_format(@listing.pics) %>
+
+</div>
