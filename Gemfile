@@ -7,6 +7,10 @@ gem 'dynamic_form'
 
 gem 'sqlite3'
 
+gem 'therubyracer'  # If using Ruby
+gem 'less-rails-bootstrap'
+gem "twitter-bootstrap-rails"
+
 
 
 group :test, :development do
