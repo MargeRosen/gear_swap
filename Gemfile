@@ -1,4 +1,4 @@
- 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'dynamic_form'
@@ -8,7 +8,6 @@ gem 'dynamic_form'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
 gem 'sqlite3'
 
 gem 'therubyracer'  # If using Ruby
