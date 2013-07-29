@@ -10,13 +10,6 @@ gem 'dynamic_form'
 gem 'turbolinks'
 gem 'sqlite3'
 
-gem 'therubyracer'  # If using Ruby
-gem "twitter-bootstrap-rails"
-gem 'less-rails-bootstrap'
-
-
-gem 'sqlite3'
-
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
@@ -40,7 +33,7 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
