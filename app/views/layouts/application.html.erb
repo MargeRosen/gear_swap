@@ -52,7 +52,7 @@
               <% else %>
                 <li><%= link_to "Sign up", new_user_registration_path %></li>
               <% end %>
-              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Sign in", new_user_session_path  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -65,6 +65,11 @@
           <div class="span9">
             <%= bootstrap_flash %>
             <%= yield %>
+            <% flash.each do |key, value| %>
+              <div class='flash' id='<%= key %>'>
+                <%= value %>
+              </div>
+            <% end %>
           </div>
           <div class="span3">
             <div class="well sidebar-nav">
