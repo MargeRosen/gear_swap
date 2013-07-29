@@ -4,7 +4,6 @@ require 'spec_helper'
     scenario "Viewing all categories" do
       category = Factory.create(:category, :name => "Keyboards")
       visit '/'
-      #click_link 'Keyboards'
       click_link category.name
       page.current_url.should == category_url(category)
     end
