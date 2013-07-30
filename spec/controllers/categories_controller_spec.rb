@@ -22,6 +22,7 @@ describe CategoriesController do
         end
       end
 
+
     it "displays an error for a missing category" do
       get :show, :id => "not-here"
       response.should redirect_to(categories_path)
