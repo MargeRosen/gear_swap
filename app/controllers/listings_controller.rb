@@ -2,9 +2,9 @@ class ListingsController < ApplicationController
   before_filter :find_category
   before_filter :find_listing, :only => [:show, :edit, :update, :destroy]
 
-   def find_listing
-    @listing = @category.listings.find(params[:id])
-  end
+   #def find_listing
+    #@listing = @category.listings.find(params[:id])
+  #end
 
   def new
     @listing = @category.listings.build
@@ -37,6 +37,13 @@ class ListingsController < ApplicationController
       flash[:alert] = "Listing has not been updated."
       render :action => "edit"
     end
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    flash[:notice] = "Listing has been deleted."
+    redirect_to @category
   end
 
   private

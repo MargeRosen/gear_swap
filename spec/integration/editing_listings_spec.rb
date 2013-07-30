@@ -18,7 +18,7 @@ feature "Editing Listing" do
     within("#listing h4") do
       page.should have_content("Plays great!")
     end
-    save_and_open_page
+
     page.should_not have_content(@listing.title)
   end
 
