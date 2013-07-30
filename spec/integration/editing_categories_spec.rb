@@ -2,6 +2,7 @@ require 'spec_helper'
 
 feature "Editing Categories" do
   before do
+    sign_in_as!(Factory(:admin_user))
     Factory(:category, :name => "Keyboards")
     visit '/'
     click_link "Keyboards"
