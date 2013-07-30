@@ -44,13 +44,7 @@ class CategoriesController < ApplicationController
   end
 
   private
-    def authorize_admin!
-      authenticate_user!
-      unless current_user.admin?
-        flash[:alert] = "You must be an admin to do that."
-        redirect_to root_path
-      end
-    end
+    # def authorize_admin! moved to the application_controller.rb
 
     def find_category
       @category = Category.find(params[:id])

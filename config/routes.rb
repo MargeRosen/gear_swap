@@ -1,4 +1,7 @@
 GearSwap::Application.routes.draw do
+  get "users/index"
+  get "/admin/users/index"
+
   devise_for :users
 
   resources :categories do
