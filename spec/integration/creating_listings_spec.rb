@@ -26,9 +26,6 @@ feature "Creating Listings" do
     fill_in "Pics", :with => "mysite.com/keyboard_image"
     click_button "Create Listing"
     page.should have_content("Your listing has been created.")
-    within("#listing #author") do
-      page.should have_content("Created by lister@gigswap.com")
-    end
   end
 
   scenario "Creating a listing without valid attributes fails" do

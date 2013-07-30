@@ -40,4 +40,12 @@ require 'spec_helper'
       end
       page.should have_content("Seattle, WA")
     end
+
+    scenario "Anonymous user views a listing" do
+      click_link "Keyboards"
+      click_link "Yamaha DX7"
+      page.should have_content("You must be signed in to view lister contact information.")
+      page.should_not have_content("test@gmail.com")
+    end
+
   end
