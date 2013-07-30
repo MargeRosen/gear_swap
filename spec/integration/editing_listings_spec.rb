@@ -1,13 +1,19 @@
 require 'spec_helper'
 
 feature "Editing Listing" do
+    let!(:category) {Factory(:category)}
+    let!(:user) {Factory(:confirmed_user)}
+    let!(:listing) do
+      listing = Factory(:listing, :title => "Yamaha", category_id: category.id, :description => "Plays great!")
+      listing.update_attribute(:user, user)
+      listing
+    end
 
   before do
-    category = Factory(:category, :name => "Keyboards")
-    @listing = Factory(:listing, :title => "Yamaha", category_id: category.id, :description => "Plays great!")
+    sign_in_as!(user)
     visit '/'
-    click_link "Keyboards"
-    click_link "Yamaha"
+    click_link category.name
+    click_link listing.title
     click_link "Edit Listing"
   end
 
@@ -19,7 +25,7 @@ feature "Editing Listing" do
       page.should have_content("Plays great!")
     end
 
-    page.should_not have_content(@listing.title)
+    page.should_not have_content(listing.title)
   end
 
   scenario "Updating a category with invalid info" do

@@ -3,8 +3,9 @@ require 'spec_helper'
   feature "Viewing listings" do
     before do
       # Get the category and it's listing"
+      user = Factory(:user)
       category = Factory.create(:category, :name => "Keyboards")
-      Factory(:listing,
+      ticket = Factory(:listing,
             :category => category,
             :title => "Yamaha DX7",
             :description => "Vintage -- plays great!",
@@ -12,6 +13,8 @@ require 'spec_helper'
             :price => "400",
             :contact => "test@gmail.com",
             :pics => "pic 1")
+      ticket.update_attribute(:user, user)
+
 
       category = Factory(:category, :name => "Trumpet")
       Factory(:listing,

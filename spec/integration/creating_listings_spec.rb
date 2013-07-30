@@ -3,10 +3,18 @@ require 'spec_helper'
 feature "Creating Listings" do
 
   before do
-    category = Factory(:category, :name => 'Keyboards')
+    Factory(:category, :name => 'Keyboards')
+    user = Factory(:user, :email => "lister@gigswap.com")
+    user.confirm!
+
     visit '/'
     click_link "Keyboards"
     click_link "New Listing"
+    page.should have_content("You need to sign in or sign up before continuing")
+
+    fill_in "Email", :with => "lister@gigswap.com"
+    fill_in "Password", :with => "password"
+    click_button "Sign in"
   end
 
   scenario "Creating a listing" do
@@ -18,6 +26,9 @@ feature "Creating Listings" do
     fill_in "Pics", :with => "mysite.com/keyboard_image"
     click_button "Create Listing"
     page.should have_content("Your listing has been created.")
+    within("#listing #author") do
+      page.should have_content("Created by lister@gigswap.com")
+    end
   end
 
   scenario "Creating a listing without valid attributes fails" do
@@ -26,5 +37,6 @@ feature "Creating Listings" do
     page.should have_content("Title can't be blank")
     page.should have_content("Description can't be blank")
   end
+
 end
 
