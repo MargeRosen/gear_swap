@@ -16,14 +16,15 @@ class ListingsController < ApplicationController
   end
 
   def create
-  @listing = @category.listings.build(params[:listing])
-  @listing.user = current_user
-  if @listing.save
-    flash[:notice] = "Your listing has been created."
-    redirect_to [@category, @listing]
-  else
-    flash[:alert] = "Listing has not been created."
-    render :action => "new"
+    @listing = @category.listings.build(params[:listing])
+    @listing.user = current_user
+    if @listing.save
+      flash[:notice] = "Your listing has been created."
+      redirect_to [@category, @listing]
+    else
+     flash[:alert] = "Listing has not been created."
+     render :action => "new"
+    end
   end
 
   def show

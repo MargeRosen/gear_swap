@@ -1,13 +1,19 @@
 require 'spec_helper'
 
  feature "Deleting listing" do
+    let!(:category) {Factory(:category)}
+    let!(:user) {Factory(:confirmed_user)}
+    let!(:listing) do
+      listing = Factory(:listing, :title => "Yamaha", category_id: category.id, :description => "Plays great!")
+      listing.update_attribute(:user, user)
+      listing
+    end
 
   before do
-    category = Factory(:category, :name => "Keyboards")
-    @listing = Factory(:listing, :title => "Example listing")
+    sign_in_as!(user)
     visit '/'
-    click_link "Keyboards"
-    click_link "Example listing"
+    click_link category.name
+    click_link listing.title
     click_link "Delete Listing"
   end
 
