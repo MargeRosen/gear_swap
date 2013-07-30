@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
     @listing = @category.listings.build
     #@listing.assets.build
   end
+
   def edit
     @listing
   end
@@ -48,6 +49,9 @@ class ListingsController < ApplicationController
   private
   def find_category
     @category = Category.find(params[:category_id])
+    rescue Active::RecordNotFound
+    flash[:alert] = "The project you were looking for could not be found."
+    redirect_to root_path
   end
 
   def find_listing
