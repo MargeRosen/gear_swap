@@ -46,7 +46,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 # User Authentication
-gem 'devise', '3.0.0.rc'
+gem 'devise', '2.1.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
