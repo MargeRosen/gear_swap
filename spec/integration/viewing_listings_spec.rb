@@ -32,7 +32,6 @@ require 'spec_helper'
       page.should_not have_content("Indiana.  All valves and slides work.")
 
       click_link "Yamaha DX7"
-      save_and_open_page
       within("#listing h4") do
         page.should have_content("Vintage -- plays great!")
       end
