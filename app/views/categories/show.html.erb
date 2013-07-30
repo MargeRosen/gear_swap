@@ -12,7 +12,6 @@
   <ul id='listings'>
   <% @category.listings.each do |listing| %>
     <li>
-      #<%= listing.id %> -
       <%= link_to listing.title, [@category, listing] %>
     </li>
   <% end %>

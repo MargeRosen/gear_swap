@@ -26,7 +26,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @listing = Listing.find(params[:id])
   end
 
   def update
@@ -49,9 +49,6 @@ class ListingsController < ApplicationController
   private
   def find_category
     @category = Category.find(params[:category_id])
-    rescue Active::RecordNotFound
-    flash[:alert] = "The project you were looking for could not be found."
-    redirect_to root_path
   end
 
   def find_listing

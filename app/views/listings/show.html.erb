@@ -1,18 +1,18 @@
 <div id='listing'>
-  <h2><%= title(@category.name, "Categories") %></h2> iuyguiyfyt
-  <h2><%= @listing.category.name %></h2> ugiugig
+  <h2><%= title(@category.name, "Categories") %></h2>
+  <h2><%= @category.name %></h2>
   <h3><%= @listing.title %></h3>
   <h4><%= @listing.description %></h4>
     <p> Location: <%= @listing.location  %></p>
-    <p> $
-  <%= @listing.price %></p>
+    <p> $<%= @listing.price %></p>
   <% if user_signed_in?%>
-    <%= @listing.contact %>
+    <p><%= @listing.contact %></p>
   <% else %>
-    You must be <%= link_to "signed in", :new_user_session %> to view lister contact information.
+    <p>You must be <%= link_to "signed in", :new_user_session %> to view lister contact information.</p>
   <% end %>
-  <%= @listing.pics %>
+  <%= link_to "Photo", @listing.pics %>
   <h2><%= title(@listing.title, "Listings") %></h2>
+  <%= link_to "Back to Category", @category %>
   <%= link_to "New Listing", new_category_listing_path(@category) %>
   <%= link_to "Edit Listing", [:edit, @category, @listing] %>
   <%= link_to "Delete Listing", [@category, @listing],
