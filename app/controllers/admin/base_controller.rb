@@ -5,4 +5,8 @@ class Admin::BaseController < ApplicationController
   # and as a class that the other controllers inside the admin namespace
   # can inherit from.
   before_filter :authorize_admin!
+
+  def index
+
+  end
 end
