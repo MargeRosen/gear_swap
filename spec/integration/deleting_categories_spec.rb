@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 feature "Deleting categories" do
+  before do
+    sign_in_as!(Factory(:admin_user))
+  end
   scenario "Deleting a category" do
     Factory(:category, :name => "Keyboards")
     visit '/'
