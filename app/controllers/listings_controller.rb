@@ -10,21 +10,34 @@ class ListingsController < ApplicationController
     @listing = @category.listings.build
     #@listing.assets.build
   end
+  def edit
+    @listing
+  end
 
   def create
   @listing = @category.listings.build(params[:listing])
-  if @listing.save
-    flash[:notice] = "Your listing has been created."
-    redirect_to [@category, @listing]
-  else
-    flash[:alert] = "Listing has not been created."
-    render :action => "new"
+    if @listing.save
+      flash[:notice] = "Your listing has been created."
+      redirect_to [@category, @listing]
+    else
+      flash[:alert] = "Listing has not been created."
+      render :action => "new"
+    end
   end
 
   def show
     @category = Category.find(params[:id])
   end
-end
+
+  def update
+    if @listing.update_attributes(params[:listing])
+      flash[:notice] = "Listing has been updated."
+      redirect_to [@category, @listing]
+    else
+      flash[:alert] = "Listing has not been updated."
+      render :action => "edit"
+    end
+  end
 
   private
   def find_category
