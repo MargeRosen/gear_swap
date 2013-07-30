@@ -1,9 +1,13 @@
 require 'spec_helper'
+
 feature 'Creating Categories' do
   before do
     visit '/'
+    sign_in_as!(Factory(:admin_user))
+    visit '/'
     click_link 'New Category'
   end
+
   scenario "can create a category" do
     fill_in 'Name', :with => 'Keyboards'
     click_button 'Create Category'
