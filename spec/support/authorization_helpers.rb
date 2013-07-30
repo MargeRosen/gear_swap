@@ -1,6 +1,6 @@
 module AuthorizationHelpers
   def define_permission!(user, action, thing)
-    Permissions.create!(:user => user,
+    Permission.create!(:user => user,
                         :action => action,
                         :thing => thing)
   end
