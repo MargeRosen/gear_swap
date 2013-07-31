@@ -8,13 +8,24 @@ gem 'dynamic_form'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem 'sqlite3'
 
+# To deploy to Heroku
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+# Dev testing
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
   gem 'pry-rails' #REPL - read evaluate print loop
 end
+
 group :test do
   gem 'capybara', '1.1.2'
   gem 'pry-debugger'
