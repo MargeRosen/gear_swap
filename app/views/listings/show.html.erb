@@ -4,7 +4,7 @@
   <h3><%= @listing.title %></h3>
   <h4><%= @listing.description %></h4>
     <p> Location: <%= @listing.location  %></p>
-    <p> Price: $<%= @listing.price %></p>
+    <p> Price: <%= number_to_currency(@listing.price) %></p>
   <% if user_signed_in?%>
     <p> Lister contact: <%= @listing.contact %></p>
   <% else %>
