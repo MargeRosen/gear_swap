@@ -14,15 +14,19 @@
   </p>
    <p>
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    $<%= f.text_field :price %>
   </p>
    <p>
     <%= f.label :contact %><br>
     <%= f.text_field :contact %>
   </p>
   <p>
-    <%= f.label :picture_link %><br>
+    <%= f.label :picture_link_1 %><br>
     <%= f.text_area :pics, :rows => 3 %>
+    <%= f.label :picture_link_2 %><br>
+    <%= f.text_area :pics2, :rows => 3 %>
+    <%= f.label :picture_link_3 %><br>
+    <%= f.text_area :pics3, :rows => 3 %>
   </p>
   <%= f.submit %>
 <% end %>

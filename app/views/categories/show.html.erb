@@ -10,7 +10,7 @@
 <%= link_to "Back to Categories Page", categories_path %>
 
   <ul id='listings'>
-  <% @category.listings.each do |listing| %>
+  <% @category.listings.reverse.each do |listing| %>
     <li>
       <%= link_to listing.title, [@category, listing] %>
     </li>
