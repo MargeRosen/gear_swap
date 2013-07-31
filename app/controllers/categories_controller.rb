@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-
+    @category.listings = @category.listings.where(created_at: (Date.today - 7)..(Date.today))
   end
 
   def edit
