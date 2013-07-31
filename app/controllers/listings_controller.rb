@@ -14,6 +14,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+
     @listing = @category.listings.build(params[:listing])
     @listing.user = current_user
     if @listing.save

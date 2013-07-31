@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category.listings = @category.listings.where(created_at: (Date.today - 7)..(Date.today))
+    @listings = @category.listings.where(created_at: (DateTime.now - 7)..(DateTime.now))
   end
 
   def edit

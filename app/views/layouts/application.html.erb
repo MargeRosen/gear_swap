@@ -14,7 +14,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Sign up", new_user_registration_path %><br>
+  <div class = "span8 offset3 ">
+<div class = "span2 offset8"><%= link_to "Sign up", new_user_registration_path %><br></div>
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>
   <% admins_only do %>
@@ -32,6 +33,6 @@
                 <%= value %>
               </div>
             <% end %>
-
+</div>
 </body>
 </html>
