@@ -12,12 +12,4 @@ describe Admin::UsersController do
       flash[:alert].should eql("You must be an admin to do that.")
     end
   end
-
-  #describe "GET 'index'" do
-    #it "returns http success" do
-      #get 'index'
-      #response.should be_success
-    #end
-  #end
-
 end

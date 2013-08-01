@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!  This displays on EVERY page>
-<html>
+<html lang='en'>
 <head>
   <title>
     <% if content_for?(:title) %>
@@ -13,17 +13,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%= link_to "Sign up", new_user_registration_path %><br>
-<% if user_signed_in? %>
-  Signed in as <%= current_user.email %>
-  <% admins_only do %>
-    <%= link_to "Admin", admin_root_path %>
-  <% end %>
-<% else %>
-  <%= link_to "Sign in", new_user_session_path  %><br>
-<% end %>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <body>
+    <div class='navbar header'>
+      <div class='navbar-inner'>
+        <%= render :partial => 'layouts/navigation' %>
+      </div>
+    </div>
 
 <%= yield %>
 
@@ -33,5 +28,8 @@
               </div>
             <% end %>
 
-</body>
+    <div class='container footer'>
+      <%= render :partial => 'layouts/footer' %>
+    </div>
+  </body>
 </html>
