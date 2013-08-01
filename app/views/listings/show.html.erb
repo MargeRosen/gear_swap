@@ -26,7 +26,6 @@
   <%= link_to "Back to #{cat_return}", @category %>
   <% if user_signed_in? %>
     <% if current_user.id == @listing.user_id %>
-      <%= link_to "New Listing", new_category_listing_path(@category) %>
       <%= link_to "Edit Listing", [:edit, @category, @listing] %>
       <%= link_to "Delete Listing", [@category, @listing],
           :method => :delete,
