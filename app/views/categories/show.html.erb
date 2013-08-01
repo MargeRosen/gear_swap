@@ -10,7 +10,7 @@
 <div class = "btn"><%= link_to "Back to Categories Page", categories_path %></div>
 
   <ul id='listings'>
-  <% @category.listings.reverse.each do |listing| %>
+  <% @listings.reverse.each do |listing| %>
     <li>
       <%= link_to listing.title, [@category, listing] %>
     </li>
