@@ -1,8 +1,12 @@
 == README.md  Gear Swap
 
-Buy, Sell and Swap your musical gear.
+Buy, sell and swap your musical gear.
 
-Musical Instrument categories provide a convenient way to find the gear you want.
+Musical instrument categories provide a convenient way to find the gear you want.
 
-Musicians can post listings of musicial instruments, accessories and assorted gear for sale/swap.
+Registered can post listings of musicial instruments, accessories and assorted gear for sale/swap. They can also see the contact info provided on other listings.
+
+Registration is easy and 100% free!
+
+Listings only appear on the site for one week after they're created, so you'll only see the most up-to-date info.
 
