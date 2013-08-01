@@ -1,32 +1,24 @@
-<%= link_to 'GearSwap', root_path %>
-
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<div class="navbar">
       <div class="container">
         <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-          <button type="button" class="btn btn-warning">Sign-in / Sign-up</button>
-        <a class="brand" href="/">GearSwap</a>
-          <div class ="valprop"> Buy, Sell and Swap Musical Instruments and Gear</div >
+
+        <a class="brand pull-left" href="/">GearSwap</a>
+          <div class ="valprop pull-left"> Buy, Sell and Swap Musical Instruments and Gear</div >
 
         <div class="container nav-collapse">
           <ul class="nav pull-right">
             <% admins_only do %>
-              <li><%= link_to "Admin", admin_root_path %> Admin</li>
+              <li><%= link_to "Admin lounge", admin_root_path %></li>
             <% end %>
 
-            <%= link_to "Sign up", new_user_registration_path %><br>
-
             <% if user_signed_in? %>
-              <%= link_to '#', :class => 'dropdown-toggle', :'data-toggle' => 'dropdown' do %>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %></li><br />
               <li>Signed in as <%= current_user.email %></li>
-                <b class='caret'></b>
-              <% end %>
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %></li>
             <% else %>
+              <%= link_to "Sign up", new_user_registration_path %>
               <%= link_to "Sign in", new_user_session_path  %>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
     </div>
 </div>

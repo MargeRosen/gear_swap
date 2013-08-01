@@ -5,7 +5,7 @@ feature "Creating Users" do
   before do
     sign_in_as!(admin)
     visit '/'
-    click_link "Admin"
+    click_link "Admin lounge"
     click_link "Users"
     click_link "New User"
   end

@@ -6,7 +6,7 @@ feature 'Deleting users' do
   before do
     sign_in_as!(admin_user)
     visit '/'
-    click_link 'Admin'
+    click_link 'Admin lounge'
     click_link 'Users'
   end
 

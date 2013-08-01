@@ -6,7 +6,7 @@ feature 'Editing a user' do
   before do
     sign_in_as!(admin_user)
     visit '/'
-    click_link "Admin"
+    click_link "Admin lounge"
     click_link "Users"
     click_link user.email
     click_link "Edit User"
