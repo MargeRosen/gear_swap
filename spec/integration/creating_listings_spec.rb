@@ -23,7 +23,7 @@ feature "Creating Listings" do
     fill_in "Location", :with => "SLU, Seattle"
     fill_in "Price", :with => "150"
     fill_in "Contact", :with => "lister@gigswap.com"
-    fill_in "Pics2", :with => "mysite.com/keyboard_image"
+    fill_in "Picture link 1", :with => "mysite.com/keyboard_image"
     click_button "Create Listing"
     page.should have_content("Your listing has been created.")
   end

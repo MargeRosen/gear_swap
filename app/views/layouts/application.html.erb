@@ -31,13 +31,14 @@
   <% end %>
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
-  <%= yield %>
-
-  <% flash.each do |key, value| %>
+ <% flash.each do |key, value| %>
               <div class='flash' id='<%= key %>'>
                 <%= value %>
               </div>
   <% end %>
+
+  <%= yield %>
+
 
   <div class='container footer'>
       <%= render :partial => 'layouts/footer' %>
