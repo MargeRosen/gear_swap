@@ -3,12 +3,9 @@
 <html lang='en'>
 <head>
   <title>
-    <% if content_for?(:title) %>
-      <%= yield(:title) %>
-    <% else %>
-      GearSwap
-    <% end %>
+    <% content_for?(:title) ? yield(:title) : "GearSwap"%>
   </title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,16 +16,30 @@
         <%= render :partial => 'layouts/navigation' %>
       </div>
     </div>
+<! =======>
+  <div class = "span8 offset3 ">
+  <div class = "span2 offset8"><%= link_to "Sign up", new_user_registration_path %><br>
+  </div>
 
-<%= yield %>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>
+    <% admins_only do %>
+      <%= link_to "Admin", admin_root_path %>
+    <% end %>
+  <% else %>
+   <%= link_to "Sign in", new_user_session_path  %><br>
+  <% end %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 
-<% flash.each do |key, value| %>
+  <%= yield %>
+
+  <% flash.each do |key, value| %>
               <div class='flash' id='<%= key %>'>
                 <%= value %>
               </div>
-            <% end %>
+  <% end %>
 
-    <div class='container footer'>
+  <div class='container footer'>
       <%= render :partial => 'layouts/footer' %>
     </div>
   </body>

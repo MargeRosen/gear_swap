@@ -14,7 +14,6 @@ feature 'Signing in' do
 
   scenario 'Signing in via form' do
     User.find_by_email('drummer@example.com').confirm!
-    save_and_open_page
     visit '/'
     click_link 'Sign in'
     fill_in 'Email', :with => "drummer@example.com"
