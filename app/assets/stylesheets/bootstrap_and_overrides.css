@@ -16,15 +16,17 @@
   color: orange;
 }
 
+ .container .btn-navbar {
+  color: orange;
+}
+
 .footer a{
   background-color: #FF9933;
-  font-fammily: bold;
   color: white;
   margin-left: 20px;
 }
 .footer {
   background-color: #FF9933;
-  font-fammily: bold;
   color: white;
 }
 
