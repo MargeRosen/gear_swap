@@ -4,9 +4,9 @@ require 'spec_helper'
     before do
       # Get the category and it's listing"
       user = Factory(:user)
-      category = Factory.create(:category, :name => "Keyboards")
+      @category = Factory.create(:category, :name => "Keyboards")
       listing = Factory(:listing,
-            :category => category,
+            :category => @category,
             :title => "Yamaha DX7",
             :description => "Vintage -- plays great!",
             :location => "Seattle, WA",
@@ -15,10 +15,8 @@ require 'spec_helper'
             :pics => "pic 1")
       listing.update_attribute(:user, user)
 
-
-      category = Factory(:category, :name => "Trumpet")
       Factory(:listing,
-            :category => category,
+            :category => Factory(:category, :name => "Trumpet"),
             :title => "Bach Strad 37 - 1978",
             :description => "Indiana.  All valves and slides work.",
             :location => "Lynwood, WA",
@@ -30,7 +28,7 @@ require 'spec_helper'
 
     scenario "Viewing a listing for a category" do
       click_link "Keyboards"
-      page.current_url.should == category_url(category)
+      page.current_url.should == category_url(@category)
       page.should have_content("Yamaha DX7")
       page.should_not have_content("Indiana.  All valves and slides work.")
 
