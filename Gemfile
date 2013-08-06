@@ -10,13 +10,14 @@ gem 'dynamic_form'
 gem 'turbolinks'
 
 # To deploy to Heroku
-group :development, :test do
-  gem 'sqlite3'
+group :development do
+#  gem 'capistrano'
 end
 
 
 # Dev testing
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
   gem 'pry-rails' #REPL - read evaluate print loop
@@ -28,6 +29,10 @@ group :test do
   gem 'factory_girl', '2.6.4'
   gem 'email_spec', '1.2.1'
   gem 'simplecov', :require => false, :group => :test
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :doc do
