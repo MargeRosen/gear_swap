@@ -50,6 +50,8 @@ GearSwap::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  # For Heroku
+  config.action_mailer.default_url_options = { :host => 'http://protected-spire-3851.herokuapp.com' }
 
   # Enable threaded mode
   # config.threadsafe!
