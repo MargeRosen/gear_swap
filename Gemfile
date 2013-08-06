@@ -5,6 +5,10 @@ gem 'dynamic_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# User Authentication
+gem 'devise', '2.1.0'
+gem 'paperclip', '2.7.0'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -29,6 +33,7 @@ group :test do
   gem 'factory_girl', '2.6.4'
   gem 'email_spec', '1.2.1'
   gem 'simplecov', :require => false, :group => :test
+  gem 'database_cleaner'
 end
 
 group :production do
@@ -57,8 +62,6 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# User Authentication
-gem 'devise', '2.1.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -73,4 +76,4 @@ gem 'devise', '2.1.0'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'
