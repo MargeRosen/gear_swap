@@ -18,6 +18,8 @@ group :development do
 #  gem 'capistrano'
 end
 
+# Manages concurrency - one dyno on Heroku can handle 3.
+gem 'unicorn'
 
 # Dev testing
 group :test, :development do
