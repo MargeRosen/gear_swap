@@ -1,6 +1,6 @@
 <div class="navbar">
       <div class="container">
-        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> Sign in</a>
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> Sign in /Sign up</a>
 
         <a class="brand pull-left" href="/">GearSwap</a>
           <div class ="valprop pull-left"> Buy, Sell and Swap Musical Instruments and Gear</div >
@@ -17,6 +17,7 @@
             <% else %>
               <%= link_to "Sign up", new_user_registration_path %>
               <%= link_to "Sign in", new_user_session_path  %>
+              <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->

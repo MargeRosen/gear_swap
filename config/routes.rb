@@ -1,4 +1,8 @@
 GearSwap::Application.routes.draw do
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                     controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  resources :users
+
   get "users/index"
   #get "/admin/users/index"
   namespace :admin do
@@ -6,7 +10,6 @@ GearSwap::Application.routes.draw do
     resources :users
   end
 
-  devise_for :users
 
   resources :categories do
     resources :listings
@@ -14,6 +17,10 @@ GearSwap::Application.routes.draw do
   root :to => "categories#index"
 
    match ':action' => 'static_content#:action'
+
+  # Use this if NOT using Devise
+  # Can configure for any provider. Substitute "provider" for "twitter"
+  #match 'auth/twitter/callback', to: 'sessions#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

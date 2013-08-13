@@ -6,9 +6,11 @@ gem 'dynamic_form'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # User Authentication
-gem 'devise', '2.1.0'
+gem 'devise'
 gem 'paperclip', '2.7.0'
 
+# Sign in with Twitter
+gem 'omniauth-twitter'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -26,7 +28,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
-  gem 'pry-rails' #REPL - read evaluate print loop
+  gem 'pry-debugger' #REPL - read evaluate print loop
 end
 
 group :test do
@@ -79,3 +81,6 @@ gem 'jbuilder', '~> 1.2'
 
 # To use debugger
  gem 'debugger'
+
+
+
