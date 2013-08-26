@@ -5,6 +5,7 @@ gem 'dynamic_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'carrierwave'
+gem 'fog'
 
 # User Authentication
 gem 'devise'
