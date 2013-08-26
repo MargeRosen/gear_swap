@@ -4,8 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
+    <th>Username</th>
     <th>Login</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -14,6 +14,7 @@
   <tr>
     <td><%= User.name %></td>
     <td><%= User.email %></td>
+    <td><%= User.username %></td>
     <td><%= User.login %></td>
     <td><%= link_to 'Show', User %></td>
     <td><%= link_to 'Edit', edit_User_path(User) %></td>

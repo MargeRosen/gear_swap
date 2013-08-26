@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :login, :name
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable #:token_authenticable,
+  devise :database_authenticatable, :registerable, :omniauthable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable  #:token_authenticable,
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :as => :admin
@@ -15,19 +15,16 @@ class User < ActiveRecord::Base
   #validates_uniqueness_of :username
 
   def self.from_omniauth(auth)
-    binding.pry
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.email = auth.email # "test@example.com"
-      user.password = new_secure_random_password #auth.password #"password"
+      user.username = auth.info.nickname
       user.confirm!
       if user.save
         logger.info "user was saved"
       else
         logger.info "user was not saved"
       end
-      #user.username = auth.info.nickname
     end
   end
 
@@ -35,7 +32,6 @@ class User < ActiveRecord::Base
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
         user.attributes = params
-        #binding.pry
         user.valid?
       end
     else
@@ -57,7 +53,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def new_secure_random_password
-    "S3cur34U"
-  end
+  #def new_secure_random_password
+    #"S3cur34U"
+  #end
 end
