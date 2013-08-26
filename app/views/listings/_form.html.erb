@@ -28,5 +28,8 @@
     <%= f.label :pics3, "Picture link 3" %><br>
     <%= f.text_area :pics3, :rows => 3 %>
   </p>
+  <p>
+    <%=f.file_field :image %>
+  </p>
   <%= f.submit %>
 <% end %>
