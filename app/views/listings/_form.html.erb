@@ -27,10 +27,11 @@
     <%= image_form.label :file, "File" %><br />
     <%= image_form.file_field :file %>
   </p>
-  <%= image_form.link_to_remove "Remove this photo" %>
+  <%= image_form.link_to_remove "Remove this photo", class: "btn" %>
   <% end %>
-  <%= f.link_to_add "Add a photo", :images %></br >
+  <%= f.link_to_add "Add a photo", :images, class: "btn" %></br >
 </p>
-
+<br/ >
+<br/ >
   <%= f.submit %>
 <% end %>
