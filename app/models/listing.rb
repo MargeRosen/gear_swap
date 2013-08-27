@@ -1,8 +1,10 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
-  attr_accessible :contact, :description, :location, :pics, :pics2, :pics3, :price, :title, :image
+  attr_accessible :contact, :description, :location, :pics, :pics2, :pics3, :price, :title, :images_attributes
   validates :title, :presence => true
   validates :description, :presence => true
-  mount_uploader :image, ImageUploader
+  has_many :images, :as => :attachable
+  accepts_nested_attributes_for :images
+  #mount_uploader :image, ImageUploader
 end

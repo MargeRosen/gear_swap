@@ -11,21 +11,14 @@
   <% else %>
     <p>You must be <%= link_to "signed in", :new_user_session %> to view lister contact information.</p>
   <% end %>
-  <% if @listing.pics != "" %>
-    <%= link_to "Photo 1", @listing.pics %><br>
-  <% end %>
-  <% if @listing.pics2 != "" %>
-    <%= link_to "Photo 2", @listing.pics2 %><br>
-  <% end %>
-  <% if @listing.pics3 != "" %>
-    <%= link_to "Photo 3", @listing.pics3 %>
+
+  <% @listing.images.each do |image| %>
+    <li>
+      <%= image_tag image.file_url.to_s %>
+    </li>
   <% end %>
 
-  <div class="image">
-    <%= image_tag @listing.image_url.to_s %>
-   </div>
-  <div class="clear"></div>
- </div>
+
 
   <h2><%= title(@listing.title, "Listings") %></h2>
   <% cat_return = @category.name %>

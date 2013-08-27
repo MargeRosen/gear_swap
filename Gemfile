@@ -6,6 +6,7 @@ gem 'dynamic_form'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'carrierwave'
 gem 'fog'
+gem 'nested_form'
 
 # User Authentication
 gem 'devise'
