@@ -14,16 +14,19 @@
             <% if user_signed_in? %>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %></li><br />
               <!li><!Signed in as <%#= current_user.email %><!/li>
-              <li>Signed in as
-                <% if current_user.username.blank? %>
-                  <%= current_user.email %></li>
-                <% else %>
-                  <%= current_user.username %></li>
-                <% end %>
+              <li>Signed in as <%= current_user %></li>
+
+                <!%# if current_user.username.blank? %>
+                  <!%#= current_user.email %><!/li>
+                <%# else %>
+                  <%#= current_user.username %><!/li>
+                <%# end %>
             <% else %>
-              <%= link_to "Sign up", new_user_registration_path %>
+              <%= link_to "Sign up |", new_user_registration_path %>
               <%= link_to "Sign in", new_user_session_path  %>
-              <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+              <br>
+              Or use <%= link_to image_tag("twitter_32.png"),  user_omniauth_authorize_path(:twitter),
+                  :id => "sign_in_with_twitter"%>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->

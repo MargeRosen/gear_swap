@@ -13,3 +13,6 @@ admin_user.confirm!
 
 Category.create(:name => "Saxophones")
 
+user = User.create(:email => "test1@example.com",
+                   :password => "password")
+user.confirm!
