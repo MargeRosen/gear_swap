@@ -23,7 +23,6 @@ feature "Creating Listings" do
     fill_in "Location", :with => "SLU, Seattle"
     fill_in "Price", :with => "150"
     fill_in "Contact", :with => "lister@gigswap.com"
-    fill_in "Picture link 1", :with => "mysite.com/keyboard_image"
     click_button "Create Listing"
     page.should have_content("Your listing has been created.")
   end
@@ -35,5 +34,22 @@ feature "Creating Listings" do
     page.should have_content("Description can't be blank")
   end
 
+  scenario "Creating a ticket with an attachment", :js => true do
+    fill_in "Title", :with => "2010 Yamaha Model ABC"
+    fill_in "Description", :with => "A nice keyboard, lightly used."
+    fill_in "Location", :with => "SLU, Seattle"
+    fill_in "Price", :with => "150"
+    fill_in "Contact", :with => "lister@gigswap.com"
+    click_link "Add a photo"
+    attach_file "File", "spec/fixtures/picture.png"
+    click_link "Add a photo"
+    attach_file "File2", "spec/fixtures/picture2.jpg"
+    click_button "Create Listing"
+    page.should have_content ("Your listing has been created.")
+    within("#ticket .asset") do
+      page.should have_content("picture.png")
+      page.should have_content("picture2.jpg")
+    end
+  end
 end
 

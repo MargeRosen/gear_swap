@@ -10,5 +10,6 @@ admin_user = User.create(:email => "admin@gearswap.com",
 admin_user.admin = true
 admin_user.confirm!
 
+
 Category.create(:name => "Saxophones")
 

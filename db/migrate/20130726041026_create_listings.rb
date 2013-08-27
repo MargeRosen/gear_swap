@@ -6,7 +6,6 @@ class CreateListings < ActiveRecord::Migration
       t.string :location
       t.decimal :price
       t.string :contact
-      t.text :pics
       t.references :category
 
       t.timestamps

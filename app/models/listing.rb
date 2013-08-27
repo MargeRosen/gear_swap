@@ -1,7 +1,7 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
-  attr_accessible :contact, :description, :location, :pics, :pics2, :pics3, :price, :title, :images_attributes
+  attr_accessible :contact, :description, :location, :price, :title, :images_attributes
   validates :title, :presence => true
   validates :description, :presence => true
   has_many :images, :as => :attachable
