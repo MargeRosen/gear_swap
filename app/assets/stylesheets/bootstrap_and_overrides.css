@@ -6,20 +6,28 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.navbar {
+  background-color: #FF9933;
+}
+
 .navbar .brand {
   font-size: 24px;
-  color: orange;
+  color: white;
 }
 .valprop {
   font-size: 14px;
   line-height: 50px;
-  color: orange;
+  color: white;
 }
 
 .container .btn-navbar {
-  color: orange;
+  color: white;
 }
 
+.nav.pull-right a{
+  line-height: 50px;
+  color: white;
+}
 
 .footer a{
   background-color: #FF9933;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826180358) do
+ActiveRecord::Schema.define(:version => 20130827172210) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(:version => 20130826180358) do
     t.string   "provider"
     t.string   "uid"
     t.string   "username"
+    t.string   "twitter_id"
+    t.string   "twitter_screen_name"
+    t.string   "twitter_display_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
