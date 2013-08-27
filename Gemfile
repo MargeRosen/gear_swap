@@ -7,6 +7,7 @@ gem 'dynamic_form'
 gem 'carrierwave'
 gem 'fog'
 gem 'nested_form'
+gem 'pg'
 
 # User Authentication
 gem 'devise'
@@ -28,10 +29,10 @@ gem 'unicorn'
 
 # Dev testing
 group :test, :development do
-  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
   gem 'pry-debugger' #REPL - read evaluate print loop
+  gem 'database_cleaner'
 end
 
 group :test do
@@ -43,9 +44,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-group :production do
-  gem 'pg'
-end
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
