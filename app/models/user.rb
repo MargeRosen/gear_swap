@@ -4,12 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable  #:token_authenticable,
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :admin, :as => :admin
 
-  def to_s
-  "#{display_name} (#{admin? ? "Admin" : "User"})"
-  end
+
 # Should add checks on email or username?
   #validates_presence_of :username
   #validates_uniqueness_of :username
@@ -20,6 +17,10 @@ class User < ActiveRecord::Base
     else
       email
     end
+  end
+
+  def to_s
+   "#{display_name} (#{admin? ? "Admin" : "User"})"
   end
 
   def self.find_or_create_for_twitter(response)
@@ -73,10 +74,4 @@ class User < ActiveRecord::Base
       super
     end
   end
-
-  private
-
-  #def new_secure_random_password
-    #"S3cur34U"
-  #end
 end

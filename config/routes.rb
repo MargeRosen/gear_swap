@@ -1,16 +1,15 @@
 GearSwap::Application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout" },
                      controllers: { registrations: "registratons",
-                       omniauth_callbacks: "users/omniauth_callbacks" }
+                       omniauth_callbacks: "omniauth_callbacks" }
   resources :users
 
   get "users/index"
   #get "/admin/users/index"
   namespace :admin do
     root :to => "base#index"
-    resources :users
+      resources :users
   end
-
 
   resources :categories do
     resources :listings
