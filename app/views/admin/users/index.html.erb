@@ -1,6 +1,4 @@
 <h1>Roles and Permissions</h1>
-<!  should this be in app/views/admin/permissions/index.html.erb ? !>
-<h2>Permissions for <%= @user.display_name %></h2>
 <%= link_to "New User", new_admin_user_path %>
 <ul id='users'>
   <% @users.each do |user| %>
