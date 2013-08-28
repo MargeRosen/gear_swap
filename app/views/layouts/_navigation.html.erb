@@ -15,13 +15,12 @@
             <%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>
           </div>
 
-            Signed in as <%= current_user.display_name %>
-
-                <%# if current_user.username.blank? %>
-                  <%#= current_user.email %>
-                <%# else %>
-                  <%#= current_user.username %>
-                <%# end %>
+            Signed in as
+                <% if current_user.username.blank? %>
+                  <%= current_user.email %>
+                <% else %>
+                  <%= current_user.username %>
+                <% end %>
         <% else %>
           <div class="btn">
             <%= link_to "Sign up", new_user_registration_path %>
