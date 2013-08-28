@@ -26,5 +26,6 @@ capybara-*.html
 
 # Ignore environment variables during "git push"
 /config/application.yml
+/config/database.yml
 
 

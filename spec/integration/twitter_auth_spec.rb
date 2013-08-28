@@ -2,16 +2,12 @@ require 'spec_helper'
 
 feature 'Twitter Auth' do
   before do
-    OmniAuth.config.mock_auth[:twitter] = {
-      "extra" => {
-        "user_hash" => {
-          "id" => '12345',
-          "screen_name" => 'twit',
-          "display_name" => "A Twit"
-        }
-      }
-    }
- end
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new ({
+      :provider => 'twitter',
+      :uid => '12345',
+      :info => { :nickname => 'A Twit (@twit)'}
+      })
+  end
 
   it "signing in with Twitter" do
     visit '/'
