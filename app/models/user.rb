@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   def to_s
    #{}"#{display_name} (#{admin? ? "Admin" : "User"})"
-   "#{username} (#{admin? ? "Admin" : "User"})"
+   "#{email} (#{admin? ? "Admin" : "User"})"
   end
 
   #def self.find_or_create_for_twitter(response)
