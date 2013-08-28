@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :login, :name, :username, :password
+  attr_accessible :email, :login, :name, :username, :password, :password_confirmation
 
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable  #:token_authenticable,
