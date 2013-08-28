@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'timecop'
 
   feature "Viewing listings" do
     before do
@@ -11,8 +12,7 @@ require 'spec_helper'
             :description => "Vintage -- plays great!",
             :location => "Seattle, WA",
             :price => "400",
-            :contact => "test@gmail.com",
-            :pics => "pic 1")
+            :contact => "test@gmail.com")
       listing.update_attribute(:user, user)
 
       Factory(:listing,
@@ -21,8 +21,7 @@ require 'spec_helper'
             :description => "Indiana.  All valves and slides work.",
             :location => "Lynwood, WA",
             :price => "1500",
-            :contact => "test2@gmail.com",
-            :pics => "pic 2")
+            :contact => "test2@gmail.com")
       visit '/'
     end
 
@@ -44,6 +43,14 @@ require 'spec_helper'
       click_link "Yamaha DX7"
       page.should have_content("You must be signed in to view lister contact information.")
       page.should_not have_content("test@gmail.com")
+    end
+
+    scenario "Listings no longer appear after 7 days" do
+      Timecop.freeze(Date.today + 8) do
+        click_link "Keyboards"
+        page.current_url.should == category_url(@category)
+        page.should have_content("Yamaha DX7")
+      end
     end
 
   end
