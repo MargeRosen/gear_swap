@@ -1,34 +1,41 @@
 <div class="navbar">
-      <div class="container">
-        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"> Sign in /Sign up</a>
+  <div class="container">
+    <a class="brand pull-left" href="/">GearSwap</a>
+    <div class ="valprop pull-left">
+      Buy, Sell and Swap Musical Instruments and Gear
+    </div >
 
-        <a class="brand pull-left" href="/">GearSwap</a>
-          <div class ="valprop pull-left"> Buy, Sell and Swap Musical Instruments and Gear</div >
+      <ul class="nav pull-right">
+        <% admins_only do %>
 
-        <div class="container nav-collapse">
-          <ul class="nav pull-right">
-            <% admins_only do %>
-              <li><%= link_to "Admin lounge", admin_root_path %></li>
-            <% end %>
+          <div class="btn">
+            <%= link_to "Admin lounge", admin_root_path %>
+          </div>
+        <% end %>
 
-            <% if user_signed_in? %>
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %></li><br />
-              <!li><!#Signed in as <%#= current_user.email %><!/li>
-              <li>Signed in as <%= current_user.display_name %></li>
+        <% if user_signed_in? %>
+          <div class="btn">
+            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>
+          </div>
 
-                <!%# if current_user.username.blank? %>
-                  <!%#= current_user.email %><!/li>
+            Signed in as <%= current_user.display_name %>
+
+                <%# if current_user.username.blank? %>
+                  <%#= current_user.email %>
                 <%# else %>
-                  <%#= current_user.username %><!/li>
+                  <%#= current_user.username %>
                 <%# end %>
-            <% else %>
-              <%= link_to "Sign up |", new_user_registration_path %>
-              <%= link_to "Sign in", new_user_session_path  %>
-              <br>
-              Or use <%= link_to image_tag("twitter_32.png"),  user_omniauth_authorize_path(:twitter),
-                  :id => "sign_in_with_twitter"%>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
-    </div>
+        <% else %>
+          <div class="btn">
+            <%= link_to "Sign up", new_user_registration_path %>
+          </div>
+          <div class="btn">
+            <%= link_to "Sign in", new_user_session_path  %>
+          </div>
+          <br>
+            Or use <%= link_to image_tag("twitter_32.png"),  user_omniauth_authorize_path(:twitter),
+                :id => "sign_in_with_twitter"%>
+        <% end %>
+      </ul>
+  </div>
 </div>

@@ -13,9 +13,9 @@
   <% end %>
 
   <% @listing.images.each do |image| %>
-    <li>
+    <p>
       <%= image_tag image.file_url.to_s %>
-    </li>
+    </p>
   <% end %>
 
 

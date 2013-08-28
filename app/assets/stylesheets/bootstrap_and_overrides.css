@@ -7,39 +7,86 @@
   */
 
 .navbar {
-  background-color: #FF9933;
+  background-color: #24248F;
+  margin-bottom: 0px;
+  color: #FFFFFF;
+}
+
+.navbar ul{
+  padding-right: 15px;
+}
+
+.header{
+  background-color: #000000;
 }
 
 .navbar .brand {
-  font-size: 24px;
-  color: white;
-}
-.valprop {
-  font-size: 14px;
-  line-height: 50px;
-  color: white;
-}
-
-.container .btn-navbar {
-  color: white;
-}
-
-.nav.pull-right a{
-  line-height: 50px;
-  color: white;
-}
-
-.footer a{
-  background-color: #FF9933;
+  font-size: 40px;
   color: white;
   margin-left: 20px;
+  padding-top: 15px;
 }
-.footer {
-  background-color: #FF9933;
+.valprop {
+  font-size: 24px;
+  line-height: 50px;
   color: white;
+  padding-top: 5px;
+}
+
+
+.container {
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+
+
+.footer{
+  padding-left:0px;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+
+.footer li{
+  padding-left:15px;
+}
+
+.navbar-fixed-bottom {
+  width:100%;
 }
 
 .category_name{
-  font-size:20px;
-  }
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+
+.nav.pull-right a{
+  line-height: 50px;
+}
+
+.navbar-inner {
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #000000;
+}
+
+.main-content{
+  padding-left: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.footer a{
+  background-color: #24248F;
+  color: white;
+  margin-left: 15px;
+}
+.footer {
+  background-color: #24248F;
+  color: white;
+}
 

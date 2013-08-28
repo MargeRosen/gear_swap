@@ -20,8 +20,8 @@
 <! =======>
 
 
-  <div class = "span8 offset2 ">
 
+ <div class = "main-content">
 
   <% flash.each do |key, value| %>
     <div class='flash' id='<%= key %>'>
@@ -30,6 +30,8 @@
   <% end %>
 
   <%= yield %>
+
+</div>
 
 
   <div class='container footer'>
