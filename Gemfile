@@ -42,6 +42,7 @@ group :test do
   gem 'email_spec', '1.2.1'
   gem 'simplecov', :require => false, :group => :test
   gem 'database_cleaner'
+  gem 'timecop'
 end
 
 

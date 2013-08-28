@@ -15,4 +15,11 @@ require 'spec_helper'
       click_link category.name
       page.current_url.should == category_url(category)
     end
+
+    scenario "Categories still appear even after 7 days" do
+      Timecop.freeze(Date.today + 8) do
+        visit '/'
+        page.should have_content(category.name)
+      end
+    end
   end
