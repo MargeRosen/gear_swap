@@ -49,10 +49,20 @@ GearSwap::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
   # For Heroku
   config.action_mailer.default_url_options = { :host => 'http://protected-spire-3851.herokuapp.com' }
-
+  ActionMailer::Base.smtp_settings = {
+    :port => '25',
+    :address => ENV['POSTMARK_SMTP_SERVER'],
+    :user_name => ENV['POSTMARK_API_KEY'],
+    :password => ENV['POSTMARK_API_KEY'],
+    :domain => 'http://protected-spire-3851.herokuapp.com',
+    :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :stmp
   # Enable threaded mode
   # config.threadsafe!
 
