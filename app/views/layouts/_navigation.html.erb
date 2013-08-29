@@ -6,12 +6,12 @@
     </div >
       <ul class="nav pull-right">
         <% admins_only do %>
-          <div class="btn">
+          <div class="btn btn-mini">
             <%= link_to "Admin lounge", admin_root_path %>
           </div>
         <% end %>
         <% if user_signed_in? %>
-          <div class="btn">
+          <div class="btn btn-mini">
             <%= link_to 'Sign out', destroy_user_session_path, :method => :delete  %>
           </div>
 
@@ -22,10 +22,10 @@
                   <%= current_user.username %>
                 <% end %>
         <% else %>
-          <div class="btn">
+          <div class="btn btn-mini">
             <%= link_to "Sign up", new_user_registration_path %>
           </div>
-          <div class="btn">
+          <div class="btn btn-mini">
             <%= link_to "Sign in", new_user_session_path  %>
           </div>
           <br>

@@ -46,10 +46,18 @@
   padding-left:0px;
   bottom:0;
   width:100%;
+  background-color: #24248F;
+  color: white;
 }
 
 .footer li{
   padding-left:15px;
+}
+
+.footer a{
+  background-color: #24248F;
+  color: white;
+  margin-left: 15px;
 }
 
 .navbar-fixed-bottom {
@@ -79,13 +87,6 @@
   position: relative;
 }
 
-.footer a{
-  background-color: #24248F;
-  color: white;
-  margin-left: 15px;
-}
-.footer {
-  background-color: #24248F;
-  color: white;
-}
+
+
 

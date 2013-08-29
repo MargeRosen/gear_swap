@@ -25,6 +25,7 @@
   <%= f.fields_for :images do |image_form| %>
     <p>
     <%= image_form.label :file, "File" %><br />
+
     <%= image_form.file_field :file %>
   </p>
   <%= image_form.link_to_remove "Remove this photo", class: "btn" %>
