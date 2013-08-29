@@ -25,21 +25,6 @@ class User < ActiveRecord::Base
    "#{email} (#{admin? ? "Admin" : "User"})"
   end
 
-  #def self.find_or_create_for_twitter(response)
-  #  data = response['extra']['user_hash']
-  #  if user = User.find_by_twitter_id(data["id"])
-  #    user
-  #  else # Create a user with a stub password.
-  #    user = User.new(:email => "twitter+#{data["id"]}@example.com",
-  #                  :password => Devise.friendly_token[0,20])
-  #    user.twitter_id = data["id"]
-  #    user.twitter_screen_name = data["screen_name"]
-  #    user.twitter_display_name = data["display_name"]
-  #    user.confirm!
-  #    user
-  #  end
-  #end
-
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid )).first_or_create do |user|
       user = User.new(:email => "twitter+#{auth.uid}@example.com",
