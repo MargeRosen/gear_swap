@@ -59,7 +59,7 @@ GearSwap::Application.configure do
     :address => ENV['POSTMARK_SMTP_SERVER'],
     :user_name => ENV['POSTMARK_API_KEY'],
     :password => ENV['POSTMARK_API_KEY'],
-    :domain => 'http://protected-spire-3851.herokuapp.com',
+    :domain => 'protected-spire-3851.herokuapp.com',
     :authentication => :plain
   }
   ActionMailer::Base.delivery_method = :stmp
