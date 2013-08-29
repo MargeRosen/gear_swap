@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid )).first_or_create do |user|
-      user = User.new(:email => "twitter+#{data["id"]}@example.com",
+      user = User.new(:email => "twitter+#{auth.uid}@example.com",
         :password => Devise.friendly_token[0,20])
       user.provider = auth.provider
       user.uid = auth.uid
