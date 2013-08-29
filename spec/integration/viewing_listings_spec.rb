@@ -49,8 +49,9 @@ require 'timecop'
       Timecop.freeze(Date.today + 8) do
         click_link "Keyboards"
         page.current_url.should == category_url(@category)
-        page.should have_content("Yamaha DX7")
+        page.should_not have_content("Yamaha DX7")
       end
+
     end
 
   end
