@@ -53,7 +53,7 @@ GearSwap::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   # For Heroku
-  config.action_mailer.default_url_options = { :host => 'http://protected-spire-3851.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'protected-spire-3851.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
     :port => '25',
     :address => ENV['POSTMARK_SMTP_SERVER'],
