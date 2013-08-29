@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.find(:all, :order => 'name')
   end
 
   def new
