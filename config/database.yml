@@ -8,6 +8,7 @@ development:
   encoding: utf8
   database: project_development
   pool: 5
+  timeout: 5000
   #username: marge
   #password: password
 
@@ -19,6 +20,7 @@ test:
   encoding: utf8
   database: project_test
   pool: 5
+  timeout: 5000
   #username: marge
   #password: 123
 
@@ -27,5 +29,6 @@ production:
   encoding: utf8
   database: project_production
   pool: 5
-  username: marge
-  password: 123
+  timeout: 5000
+  #username: marge
+  #password: 123

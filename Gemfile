@@ -11,7 +11,7 @@ gem 'pg'
 
 # User Authentication
 gem 'devise'
-gem 'paperclip', '2.7.0'
+#gem 'paperclip', '2.7.0'
 
 # Sign in with Twitter
 gem 'omniauth-twitter'
