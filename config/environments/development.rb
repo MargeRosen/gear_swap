@@ -53,4 +53,6 @@ GearSwap::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+   # Mock testing for Twitter signin
+  #OmniAuth.config.test_mode = true
 end

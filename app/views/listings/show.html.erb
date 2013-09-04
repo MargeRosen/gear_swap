@@ -2,7 +2,7 @@
   <h2><%= title(@category.name, "Categories") %></h2>
   <h2><%= @category.name %></h2>
   <h3><%= @listing.title %></h3>
-  <p>Listing created on <%= @listing.created_at.strftime("%B %e, %Y") %><br> The listing will be appear on the site for 7 days after its creation. </p>
+  <p>Listing created on <%= @listing.created_at.strftime("%B %e, %Y") %><br> The listing will appear on the site for 7 days after its creation. </p>
   <h4><%= @listing.description %></h4>
     <p> Location: <%= @listing.location  %></p>
     <p> Price: <%= number_to_currency(@listing.price) %></p>

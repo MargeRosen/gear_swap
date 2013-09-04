@@ -16,11 +16,11 @@
           </div>
 
             Signed in as
-                <% if current_user.username.blank? %>
-                  <%= current_user.email %>
-                <% else %>
-                  <%= current_user.username %>
-                <% end %>
+              <% if current_user.username.blank? %>
+                <%= current_user.email %>
+              <% else %>
+                <%= current_user.username %>
+              <% end %>
         <% else %>
           <div class="btn btn-mini">
             <%= link_to "Sign up", new_user_registration_path %>

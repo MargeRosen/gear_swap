@@ -6,5 +6,4 @@ class Listing < ActiveRecord::Base
   validates :description, :presence => true
   has_many :images, :as => :attachable
   accepts_nested_attributes_for :images
-  #mount_uploader :image, ImageUploader
 end

@@ -21,8 +21,12 @@ class User < ActiveRecord::Base
   end
 
   def to_s
+    #if user.uid.blank?
    #{}"#{display_name} (#{admin? ? "Admin" : "User"})"
-   "#{email} (#{admin? ? "Admin" : "User"})"
+     "#{email} (#{admin? ? "Admin" : "User"})"
+    #else
+      #{}"#{username} (@#{twitter_screen_name})"
+    #end
   end
 
   def self.from_omniauth(auth)
