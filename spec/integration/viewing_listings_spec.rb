@@ -51,7 +51,6 @@ require 'timecop'
         page.current_url.should == category_url(@category)
         page.should_not have_content("Yamaha DX7")
       end
-
     end
 
   end
