@@ -1,3 +1,33 @@
 // Place all the styles related to the static_content controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.about {
+  text-align: left;
+  padding-right: 10px;
+}
+
+.tos {
+  text-align: left;
+  padding-right: 10px;
+}
+
+.tos h2 {
+  text-align: center;
+}
+
+.tos h6 {
+  text-align: center;
+}
+
+.privacy {
+  text-align: left;
+  padding-right: 10px;
+}
+
+.privacy h2 {
+  text-align: center;
+}
+
+.privacy h6 {
+  text-align: center;
+}
