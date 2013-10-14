@@ -241,7 +241,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   database_cleaner
-  debugger
   devise
   dynamic_form
   email_spec (= 1.2.1)
